@@ -4,8 +4,8 @@
 }
 
 #canvas {
-    height: 75vh;
-    width: 75vh;
+    height: 80vh;
+    width: 80vh;
     display: flex;
     flex-direction: column;
     border: 2px solid black;

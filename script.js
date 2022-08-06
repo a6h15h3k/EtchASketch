@@ -2,7 +2,7 @@ const body = document.querySelector("body");
 let canvas = document.querySelector("#canvas");
 const resetButton = document.querySelector("#reset");
 const resolutionButton = document.querySelector("#resolution");
-const defaultResolution = 3;
+const defaultResolution = 100;
 
 let resolution = defaultResolution;
 setResolution(resolution);
@@ -36,7 +36,7 @@ function getResolution() {
     return input;
 }
 
-//Resets Grid to Default Color
+//Resets Grid to Defaults
 function reset() {
     //Removes div Canvas, Thus clearing Etch-A-Sketch
     body.removeChild(canvas);
@@ -64,9 +64,8 @@ function hover(pixel) {
 //Creates a Row Container, sets it's attributes and adds Pixels to it
 function createRow() {
     let row = document.createElement("div");
+    row.style.display = "flex";
     row.style.flex = "1";
-    row.style.border = "2px solid green";
-    row.style.flexDirection = "row";
 
     for (i = 1; i <= resolution; i++) {
         row.appendChild(createPixel());
@@ -78,10 +77,9 @@ function createRow() {
 //Creates a Pixel Square and sets it's attributes
 function createPixel() {
     let pixel = document.createElement("div");
-    pixel.setAttribute("id", "pixel");
+    pixel.style.display = "flex";
     pixel.style.flex = "1";
-    pixel.textContent = "Yo";
-    pixel.style.border = "2px solid red";
+    pixel.style.border = "0.1px solid grey"
 
     pixel.addEventListener('click', () => {
         pixel.style.backgroundColor = "black";
